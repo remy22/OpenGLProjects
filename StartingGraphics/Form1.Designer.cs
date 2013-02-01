@@ -1,4 +1,4 @@
-﻿namespace StartingGraphics
+﻿namespace GameStructure
 {
     partial class Form1
     {

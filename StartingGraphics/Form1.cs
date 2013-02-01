@@ -8,15 +8,18 @@ using System.Text;
 using System.Windows.Forms;
 using Tao.OpenGl;
 
-namespace StartingGraphics
+namespace GameStructure
 {
+    
     public partial class Form1 : Form
     {
         FastLoop _fastLoop;
         bool _fullscreen = false;
+        StateSystem _stateSystem = new StateSystem();
 
         public Form1()
         {
+            
             _fastLoop = new FastLoop(GameLoop);
 
             InitializeComponent();
@@ -28,27 +31,20 @@ namespace StartingGraphics
                 FormBorderStyle = FormBorderStyle.None;
                 WindowState = FormWindowState.Maximized;
             }
+
+
+
+
+
+            _stateSystem.AddState("splash", new SplashScreenState(_stateSystem));
+            _stateSystem.AddState("title_menu", new TitleMenuState());
+            _stateSystem.ChangeState("splash");
         }
 
         void GameLoop(double elapsedTime)
-        {
-            Gl.glClearColor(0, 0, 0, 1.0f);
-            Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
-            Gl.glRotated(10 * elapsedTime, 0, 1, 0);
-            Gl.glBegin(Gl.GL_TRIANGLE_STRIP);
-
-            {
-                Gl.glColor3d(1.0, 0.0, 0.0);
-                Gl.glVertex3d(-0.5, 0, 0);
-                Gl.glColor3d(0.0, 1.0, 0.0);
-                Gl.glVertex3d(0.5, 0, 0);
-                Gl.glColor3d(0.0, 0.0, 1.0);
-                Gl.glVertex3d(0, 0.5, 0);
-
-            }
-            Gl.glEnd();
-            Gl.glFinish();
-
+        {   
+            _stateSystem.Update(elapsedTime);
+            _stateSystem.Render();
             _openGLControl.Refresh();
         }
     }

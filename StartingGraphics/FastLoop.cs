@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace StartingGraphics
+namespace GameStructure
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct Message
