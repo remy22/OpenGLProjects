@@ -27,12 +27,12 @@ namespace GameStructure
         Gl.glRotated(_currentRotation, 0, 1, 0);
         Gl.glBegin(Gl.GL_TRIANGLE_STRIP);
         {
-            Gl.glColor4d(1.0, 0.0, 0.0, 0.4);
-            Gl.glVertex3d(-0.5, 0, 0);
+            Gl.glColor4d(1.0, 0.0, 0.0, 0.5);
+            Gl.glVertex3d(-50, 0, 0);
             Gl.glColor3d(0.0, 1.0, 0.0);
-            Gl.glVertex3d(0.5, 0, 0);
+            Gl.glVertex3d(50, 0, 0);
             Gl.glColor3d(0.0, 0.0, 1.0);
-            Gl.glVertex3d(0, 0.5, 0);
+            Gl.glVertex3d(0, 50, 0);
         }
         Gl.glEnd();
         Gl.glFinish();

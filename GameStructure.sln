@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStructure", "StartingGraphics\GameStructure.csproj", "{6A7A2E14-4EE6-4AC8-A640-FF0B907BEB4A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{056DA0D0-EDE3-436C-9F37-9502942B1A52}"
+	ProjectSection(SolutionItems) = preProject
+		StartingGraphics\textures\RedBird.tif = StartingGraphics\textures\RedBird.tif
+		StartingGraphics\textures\workingTitle.tif = StartingGraphics\textures\workingTitle.tif
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
